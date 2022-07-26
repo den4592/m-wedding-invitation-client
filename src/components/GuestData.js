@@ -5,7 +5,7 @@ const GuestData = ({ guestData }) => {
     .map((data) => {
       return (
         <div key={data.id} className="guest-box">
-          <p className="from-text">From.{data.name}</p>
+          <p className="from-text">From. {data.name}</p>
           <hr />
           <p className="text-text">{data.text}</p>
         </div>

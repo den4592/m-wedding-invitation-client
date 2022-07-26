@@ -106,4 +106,3 @@ const Contact = () => {
 };
 
 export default Contact;
-<section className="section3 section"></section>;

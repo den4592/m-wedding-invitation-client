@@ -539,9 +539,15 @@ table {
 }
 
 .guest-box {
-  border: 1px solid #ddd;
+  border: 5px solid #fff;
   background-color: #f1f3f4;
   padding: 1rem;
+
+  hr {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+  }
   .from-text {
   }
   .text-text {

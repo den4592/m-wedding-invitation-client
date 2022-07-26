@@ -54,7 +54,7 @@ const GuestBook = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <textarea
-              placeholder="내용을 입력해 주세요."
+              placeholder="전하고 싶은 말."
               cols="30"
               rows="10"
               value={text}
