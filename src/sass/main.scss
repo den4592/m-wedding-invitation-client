@@ -538,10 +538,22 @@ table {
   }
 }
 
+.guest-box {
+  border: 1px solid #ddd;
+  background-color: #f1f3f4;
+  padding: 1rem;
+  .from-text {
+  }
+  .text-text {
+    padding: 0.5rem 0;
+  }
+}
+
 .guest-data {
   overflow-y: scroll;
   margin: 1rem 0;
-  min-height: 10rem;
+  height: 10rem;
+  min-height: 20rem;
   border: 1px solid #ddd;
 }
 
