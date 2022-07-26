@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import img1 from "../img/1.jpg";
 import img2 from "../img/2.jpg";
@@ -56,7 +57,9 @@ const Album = () => {
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            effect={"fade"}
+            navigation={true}
+            modules={[Navigation, Pagination]}
             className="mySwiper"
           >
             <SwiperSlide>
