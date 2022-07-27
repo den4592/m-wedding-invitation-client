@@ -2,9 +2,9 @@ const GuestData = ({ guestData }) => {
   const td = guestData
     .slice(0)
     .reverse()
-    .map((data) => {
+    .map((data, index) => {
       return (
-        <div key={data.id} className="guest-box">
+        <div key={index} className="guest-box">
           <p className="from-text">From. {data.name}</p>
           <hr />
           <p className="text-text">{data.text}</p>
