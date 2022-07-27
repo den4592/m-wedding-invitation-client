@@ -1,8 +1,12 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const BankAccount = () => {
   const [bankNumber, setBankNumber] = useState("");
   const innerContent = useRef();
+  const showingText1 = useRef(null);
 
   const showContent = () => {
     innerContent.current.classList.toggle("show-content");
@@ -10,10 +14,26 @@ const BankAccount = () => {
     dropBtn.classList.toggle("checked");
   };
 
+  useEffect(() => {
+    const el1 = showingText1.current;
+    gsap.fromTo(
+      el1,
+      { opacity: 0, y: 200 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el1,
+        },
+      }
+    );
+  });
+
   return (
     <section className="section">
       <div className="container">
-        <div className="bank-account">
+        <div className="bank-account" ref={showingText1}>
           <h2>신랑 신부에게 마음 전하기</h2>
           <div className="dropdown">
             <div className="drop-btn" onClick={showContent}>

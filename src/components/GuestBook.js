@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import GuestData from "./GuestData";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import gsap from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const GuestBook = () => {
   const [guestText, setGuestText] = useState([]);
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+  const showingText1 = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +33,22 @@ const GuestBook = () => {
     setText("");
   };
 
+  useEffect(() => {
+    const el1 = showingText1.current;
+    gsap.fromTo(
+      el1,
+      { opacity: 0, y: 200 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el1,
+        },
+      }
+    );
+  }, []);
+
   //data fetch
   useEffect(() => {
     axios
@@ -44,7 +64,7 @@ const GuestBook = () => {
   return (
     <section className="section6 section">
       <div className="container">
-        <div className="guest-book">
+        <div className="guest-book" ref={showingText1}>
           <h2>방명록 </h2>
           <form onSubmit={handleSubmit}>
             <input

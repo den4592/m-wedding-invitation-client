@@ -50,7 +50,7 @@ const Dday = () => {
           <img src={calendar} className="calendar" />
           <strong>
             <p className="dday-text">
-              이병주 💘 신일선 님의 결혼식 {dday}일 전
+              strong 이병주 💘 신일선 님의 결혼식 <span>{dday}</span>일 전
             </p>
           </strong>
         </div>
