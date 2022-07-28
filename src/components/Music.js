@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import music from "../sound/music.mp3";
 import { GiSoundOn, GiSoundOff } from "react-icons/gi";
 
@@ -8,6 +8,7 @@ const Music = () => {
   const [playValue, setPlayValue] = useState(true);
 
   const handlePlay = () => {
+    audio.muted = false;
     if (playValue) {
       audio.play();
       setPlayValue(false);

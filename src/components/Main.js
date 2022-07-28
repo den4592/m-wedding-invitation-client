@@ -9,20 +9,42 @@ const Main = () => {
   const showingText3 = useRef();
 
   useEffect(() => {
-    const showingTexts = [
-      showingText1.current,
-      showingText2.current,
-      showingText3.current,
-    ];
+    const el1 = showingText1.current;
+    const el2 = showingText2.current;
+    const el3 = showingText3.current;
 
     gsap.fromTo(
-      showingTexts,
+      el1,
       { opacity: 0 },
       {
         opacity: 1,
         duration: 3,
         scrollTrigger: {
-          trigger: showingTexts,
+          trigger: el1,
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      el2,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 3,
+        scrollTrigger: {
+          trigger: el2,
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      el3,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 3,
+        scrollTrigger: {
+          trigger: el3,
           scrub: true,
         },
       }
