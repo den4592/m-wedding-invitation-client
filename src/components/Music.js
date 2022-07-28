@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import music from "../sound/music.mp3";
+
 import { GiSoundOn, GiSoundOff } from "react-icons/gi";
 
 var audio = new Audio(music);
-
 const Music = () => {
   const [playValue, setPlayValue] = useState(true);
 
   const handlePlay = () => {
-    audio.muted = false;
     if (playValue) {
       audio.play();
       setPlayValue(false);
@@ -21,17 +20,23 @@ const Music = () => {
   return (
     <div className="music">
       {playValue ? (
-        <GiSoundOn
+        <div
+          className="play-container"
           value={playValue}
           onClick={() => handlePlay()}
-          className="play-btn"
-        ></GiSoundOn>
+        >
+          <GiSoundOn className="play-btn"></GiSoundOn>
+          <span>Sound On</span>
+        </div>
       ) : (
-        <GiSoundOff
+        <div
+          className="pause-container"
           value={playValue}
           onClick={() => handlePlay()}
-          className="pause-btn"
-        ></GiSoundOff>
+        >
+          <GiSoundOff className="pause-btn"></GiSoundOff>
+          <span>Sound Off</span>
+        </div>
       )}
     </div>
   );

@@ -134,13 +134,25 @@ body {
   position: absolute;
   right: 1rem;
   top: 1rem;
-  .play-btn,
-  .pause-btn {
-    font-size: 2rem;
-    color: #fff;
+  .play-container,
+  .pause-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: #fff;
+      font-size: 0.7rem;
+    }
     &:hover {
       cursor: pointer;
       opacity: 0.7;
+    }
+    .play-btn,
+    .pause-btn {
+      height: 2rem;
+      font-size: 2rem;
+      color: #fff;
     }
   }
 }
