@@ -8,19 +8,18 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const modalBackground = useRef();
-  const showingText1 = useRef(null);
+  const showingText = useRef(null);
 
   useEffect(() => {
-    const el1 = showingText1.current;
     gsap.fromTo(
-      el1,
+      showingText.current,
       { opacity: 0, y: 200 },
       {
         y: 0,
         opacity: 1,
         duration: 2,
         scrollTrigger: {
-          trigger: el1,
+          trigger: showingText.current,
         },
       }
     );
@@ -37,7 +36,7 @@ const Contact = () => {
 
   return (
     <section className="section3 section">
-      <div className="contact" ref={showingText1}>
+      <div className="contact" ref={showingText}>
         <p className="husband-parents">
           이우식 · 신명례 차남 <strong>이병주</strong>
         </p>

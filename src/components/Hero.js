@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Music from "./Music";
+
 const Hero = () => {
   useEffect(() => {
     window.history.scrollRestoration = "manual";
@@ -92,7 +94,9 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="hero-img-container"></div>
+        <div className="hero-img-container">
+          <Music />
+        </div>
       </div>
     </section>
   );

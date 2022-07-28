@@ -12,14 +12,16 @@
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "gsap": "^3.10.4",
+    "jquery": "^3.6.0",
     "node-schedule": "^2.1.0",
     "react": "^18.2.0",
+    "react-audio-player": "^0.17.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-kakao-maps-sdk": "^1.1.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
-    "swiper": "^8.3.2",
-    "uuid": "^8.3.2"
+    "swiper": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

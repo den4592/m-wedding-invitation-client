@@ -10,7 +10,7 @@ const GuestBook = () => {
   const [guestText, setGuestText] = useState([]);
   const [name, setName] = useState("");
   const [text, setText] = useState("");
-  const showingText1 = useRef(null);
+  const showingText = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,16 +34,15 @@ const GuestBook = () => {
   };
 
   useEffect(() => {
-    const el1 = showingText1.current;
     gsap.fromTo(
-      el1,
+      showingText.current,
       { opacity: 0, y: 200 },
       {
         y: 0,
         opacity: 1,
         duration: 2,
         scrollTrigger: {
-          trigger: el1,
+          trigger: showingText.current,
         },
       }
     );
@@ -64,7 +63,7 @@ const GuestBook = () => {
   return (
     <section className="section6 section">
       <div className="container">
-        <div className="guest-book" ref={showingText1}>
+        <div className="guest-book" ref={showingText}>
           <h2>방명록 </h2>
           <form onSubmit={handleSubmit}>
             <input

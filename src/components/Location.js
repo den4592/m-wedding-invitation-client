@@ -7,19 +7,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Location = () => {
-  const showingText1 = useRef(null);
+  const showingText = useRef(null);
 
   useEffect(() => {
-    const el1 = showingText1.current;
     gsap.fromTo(
-      el1,
+      showingText.current,
       { opacity: 0, y: 200 },
       {
         y: 0,
         opacity: 1,
         duration: 2,
         scrollTrigger: {
-          trigger: el1,
+          trigger: showingText.current,
         },
       }
     );
@@ -27,7 +26,7 @@ const Location = () => {
   return (
     <section className="section5 section">
       <div className="container">
-        <div className="location" ref={showingText1}>
+        <div className="location" ref={showingText}>
           <h3 className="location-title">오시는 길</h3>
           <p className="location-main">아모르아트 웨딩컨벤션 3층 아트홀</p>
           <p className="location-detail">

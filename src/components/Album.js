@@ -29,19 +29,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Album = () => {
-  const showingText1 = useRef(null);
+  const showingText = useRef(null);
 
   useEffect(() => {
-    const el1 = showingText1.current;
     gsap.fromTo(
-      el1,
+      showingText.current,
       { opacity: 0, y: 200 },
       {
         y: 0,
         opacity: 1,
         duration: 2,
         scrollTrigger: {
-          trigger: el1,
+          trigger: showingText.current,
         },
       }
     );
@@ -50,7 +49,7 @@ const Album = () => {
   return (
     <section className="section4 section">
       <div className="container">
-        <div className="album" ref={showingText1}>
+        <div className="album" ref={showingText}>
           <h2 className="album-title">앨범</h2>
           <Swiper
             centeredSlides={true}

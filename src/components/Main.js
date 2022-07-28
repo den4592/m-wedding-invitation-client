@@ -1,52 +1,28 @@
-import Contact from "./Contact";
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Main = () => {
-  const showingText1 = useRef(null);
-  const showingText2 = useRef(null);
-  const showingText3 = useRef(null);
+  const showingText1 = useRef();
+  const showingText2 = useRef();
+  const showingText3 = useRef();
 
   useEffect(() => {
-    const el1 = showingText1.current;
-    gsap.fromTo(
-      el1,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 3,
-        scrollTrigger: {
-          trigger: el1,
-          scrub: true,
-        },
-      }
-    );
+    const showingTexts = [
+      showingText1.current,
+      showingText2.current,
+      showingText3.current,
+    ];
 
-    const el2 = showingText2.current;
     gsap.fromTo(
-      el2,
+      showingTexts,
       { opacity: 0 },
       {
         opacity: 1,
         duration: 3,
         scrollTrigger: {
-          trigger: el2,
-          scrub: true,
-        },
-      }
-    );
-
-    const el3 = showingText3.current;
-    gsap.fromTo(
-      el3,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 3,
-        scrollTrigger: {
-          trigger: el3,
+          trigger: showingTexts,
           scrub: true,
         },
       }
@@ -102,7 +78,6 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <Contact />
       </div>
     </section>
   );
