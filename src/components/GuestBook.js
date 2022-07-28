@@ -14,6 +14,12 @@ const GuestBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (name === "" || text === "") {
+      setName("");
+      setText("");
+      alert("성함과 내용을 모두 작성해 주세요.");
+      return;
+    }
     axios
       .post("https://m-wedding-invitation.herokuapp.com/guesttext", {
         name: name,
