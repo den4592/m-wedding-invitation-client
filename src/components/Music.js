@@ -3,7 +3,7 @@ import music from "../sound/music.mp3";
 
 import { GiSoundOn, GiSoundOff } from "react-icons/gi";
 
-var audio = new Audio(music);
+let audio = new Audio(music);
 const Music = () => {
   const [playValue, setPlayValue] = useState(true);
 
@@ -16,6 +16,13 @@ const Music = () => {
       setPlayValue(true);
     }
   };
+
+  useEffect(() => {
+    audio.addEventListener("ended", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  }, [audio]);
 
   return (
     <div className="music">

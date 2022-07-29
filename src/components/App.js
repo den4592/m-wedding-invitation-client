@@ -6,6 +6,7 @@ import Album from "./Album";
 import Location from "./Location";
 import BankAccount from "./BankAccount";
 import GuestBook from "./GuestBook";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Location />
       <BankAccount />
       <GuestBook />
+      <Footer />
     </div>
   );
 }
