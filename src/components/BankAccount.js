@@ -43,7 +43,7 @@ const BankAccount = () => {
               </strong>
               <div className="account-text-container">
                 <p>
-                  신랑 이병주 : 카카오뱅크
+                  이병주 : 카카오뱅크
                   <span className="text1"> 3333-07-6606971</span>
                 </p>
                 <button
@@ -57,6 +57,38 @@ const BankAccount = () => {
                   복사
                 </button>
               </div>
+              <div className="account-text-container">
+                <p>
+                  이우식 : 신한은행
+                  <span className="text2"> 110-284-429747</span>
+                </p>
+                <button
+                  className="copy-btn"
+                  onClick={() =>
+                    navigator.clipboard.writeText(
+                      document.querySelector(".text2").innerHTML
+                    )
+                  }
+                >
+                  복사
+                </button>
+              </div>
+              <div className="account-text-container">
+                <p>
+                  신명례 : 신한은행
+                  <span className="text3"> 110-020-952063</span>
+                </p>
+                <button
+                  className="copy-btn"
+                  onClick={() =>
+                    navigator.clipboard.writeText(
+                      document.querySelector(".text3").innerHTML
+                    )
+                  }
+                >
+                  복사
+                </button>
+              </div>
             </li>
             <li className="account-container">
               <strong>
@@ -64,14 +96,14 @@ const BankAccount = () => {
               </strong>
               <div className="account-text-container">
                 <p>
-                  신부 신일선 : 카카오뱅크
-                  <span className="text2"> 3333-11-9040908</span>
+                  신일선 : 카카오뱅크
+                  <span className="text4"> 3333-11-9040908</span>
                 </p>
                 <button
                   className="copy-btn"
                   onClick={() =>
                     navigator.clipboard.writeText(
-                      document.querySelector(".text2").innerHTML
+                      document.querySelector(".text4").innerHTML
                     )
                   }
                 >

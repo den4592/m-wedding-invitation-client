@@ -459,6 +459,7 @@ table {
   width: 100%;
   text-align: center;
   padding: 6rem 0;
+  font-size: 0.9rem;
   h2 {
     font-size: 1.2rem;
   }
@@ -527,11 +528,14 @@ table {
           align-items: center;
           justify-content: space-between;
         }
+        .account-text-container + .account-text-container {
+          margin-top: 0.5rem;
+        }
       }
     }
 
     .show-content {
-      height: 12rem;
+      height: 18rem;
       overflow: none;
       transition: 0.7s;
     }
