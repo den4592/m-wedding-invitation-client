@@ -64,7 +64,7 @@ const GuestBook = () => {
       .catch(() => {
         console.log("error");
       });
-  }, [guestText]);
+  }, []);
 
   return (
     <section className="section6 section">
