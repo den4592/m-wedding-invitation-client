@@ -39,7 +39,7 @@ const Dday = () => {
   }, []);
 
   //매일 00:00:00에 디데이 계산
-  schedule.scheduleJob("59 59 00 * * 0-7", () => {
+  schedule.scheduleJob("59 59 23 * * 0-7", () => {
     calculateDday();
   });
 
