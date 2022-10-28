@@ -28,7 +28,7 @@ const Dday = () => {
   const calculateDday = () => {
     const masTime = new Date("2022-10-29");
     const todayTime = new Date();
-    const diff = masTime + 1 - todayTime;
+    const diff = masTime - todayTime;
     const day = String(Math.floor(diff / (1000 * 60 * 60 * 24)));
     console.log(day);
     setDday(day);
@@ -39,7 +39,7 @@ const Dday = () => {
   }, []);
 
   //매일 00:00:00에 디데이 계산
-  schedule.scheduleJob("59 27 17 * * 0-7", () => {
+  schedule.scheduleJob("59 29 17 * * 0-7", () => {
     calculateDday();
   });
 
